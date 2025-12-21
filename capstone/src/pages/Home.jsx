@@ -1,7 +1,9 @@
+
 // src/pages/Home.jsx
 import React, { useState, useEffect } from 'react';
 import BookCard from '../components/BookCard';
 import Loader from '../components/Loader';
+import Img1 from '../assets/Book1.png';
 
 function Home() {
   // Books list
@@ -14,8 +16,15 @@ function Home() {
     setTimeout(() => {
       // Initial book data
       setBooks([
-        { id: 1, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false },
-        { id: 2, title: 'Moby Dick', author: 'Herman Melville', genre: 'Adventure', borrowed: true },
+        { id: 1, title: 'Gilead', author: 'Marilynne Robinson', genre: 'Narrative Fiction', borrowed: false, image: "/images/Book1.png" },
+        { id: 2, title: 'Moby Dick', author: 'Herman Melville', genre: 'Adventure', borrowed: true, image: "/images/Book2.png" },
+        { id: 3, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false, image: "/images/Book1.png" },
+        { id: 4, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false, image: "/images/Book1.png" },
+        { id: 5, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false, image: "/images/Book1.png" },
+        { id: 6, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false, image: "/images/Book1.png" },
+        { id: 7, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false, image: "/images/Book1.png" },
+        { id: 8, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false, image: "/images/Book1.png" },
+        { id: 9, title: '1984', author: 'George Orwell', genre: 'Dystopian', borrowed: false, image: "/images/Book1.png" },
       ]);
       setLoading(false);
     }, 800);

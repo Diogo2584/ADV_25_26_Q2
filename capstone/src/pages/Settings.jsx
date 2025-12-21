@@ -17,13 +17,13 @@ function Settings() {
 
 
       <div className={styles.appearanceContainer}>
-        <h2>Appearance</h2>
+       
 
         <div className={styles.themePreviewContainer}>
 
-          {/* Light Theme Preview */}
+      
           <div className={styles.themePreview}>
-            <h3>Toggle Light Theme</h3>
+            <h3>Light Theme</h3>
 
             <img
               src={lights}
@@ -38,7 +38,7 @@ function Settings() {
           </div>
 
           <div className={styles.themePreview}>
-            <h3>Toggle Dark Theme</h3>
+            <h3>Dark Theme</h3>
 
             <img
               src={darks}
