@@ -1,6 +1,7 @@
 
 .addBookPage {
   display: flex;
+    
   gap: 32px;
   padding: 32px;
   font-family: 'Inria Serif', serif;
