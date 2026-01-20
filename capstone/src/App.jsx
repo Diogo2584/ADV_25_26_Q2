@@ -6,6 +6,7 @@ import BookDetails from './pages/BookDetails';
 import AddBook from './pages/AddBook';
 import Settings from './pages/Settings';
 import Login from './pages/Login';
+import Account from './pages/Account';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/add" element={<AddBook />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </BrowserRouter>
   );
