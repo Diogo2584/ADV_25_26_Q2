@@ -1,11 +1,13 @@
 import React from 'react';
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import styles from '../styles/AddBook.module.css';
 import { useTheme } from '../context/ThemeContext';
+import { BooksContext } from '../context/BooksContext';
+import BookCoverPlaceholder from '../assets/book-cover-placeholder.png';
 
 
 function AddBook() {
-  const [books, setBooks] = useState([]);
+  const { books, setBooks } = useContext(BooksContext);
   const [formData, setFormData] = useState({
     name: '', 
     author: '',
@@ -20,7 +22,15 @@ function AddBook() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if(formData.name && formData.author) {
-      setBooks((prev) => [...prev, formData]);
+      const newBook = {
+        id: books.length + 1,
+        title: formData.name,
+        author: formData.author,
+        genre: formData.status,
+        borrowed: formData.status === 'Borrowed',
+        image: BookCoverPlaceholder
+      };
+      setBooks([...books, newBook]);
     setFormData({ name: '', author: '', status: 'Available' });
   }
 }; 
@@ -34,7 +44,7 @@ const { theme } = useTheme();
       
 
     const listStyle = {
-        backgroundColor: theme === "light" ? "#ffffffff" : "#CDCDCD",
+        backgroundColor: theme === "light" ? "#F3FBE6" : "#CDCDCD",
         color: theme === "light" ? "black" : "black"
       };
 
@@ -57,9 +67,9 @@ return (
         ) : (
           books.map((book, index) => (
             <div key={index} className={styles.bookEntry}>
-              <p>Book Name: {book.name}</p>
+              <p>Book Name: {book.title}</p>
               <p>Author: {book.author}</p>
-              <p>Status: {book.status}</p>
+              <p>Status: {book.borrowed ? 'Borrowed' : 'Available'}</p>
             </div>
           ))
         )}

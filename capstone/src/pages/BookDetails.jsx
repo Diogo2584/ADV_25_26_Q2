@@ -20,10 +20,10 @@ const pageStyle = {
   padding: "2rem",
   color: theme === "light" ? "black" : "white",
   fontFamily: "Inria Serif, serif",
+  width: "1686px"
 };
 
 const containerStyle = {
-  width: "1685px",
   margin: "0 auto"
 };
 
